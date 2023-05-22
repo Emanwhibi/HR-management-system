@@ -1,0 +1,68 @@
+
+header {
+    background-color: #dac7ec;
+    padding: 10px;
+  }
+  
+  .logo img {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .logo-title {
+    display: inline;
+    margin-left: 10px;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav ul li {
+    display: inline;
+    margin-right: 10px;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+  }
+  
+  /* Main content styles */
+  .main-content {
+    margin-top: 20px;
+  }
+  
+  .employee-card {
+    display: flex;
+    align-items: center;
+    background-color: #f9f9f9;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+  
+  
+  .employee-details {
+    font-size: 16px;
+  }
+  
+  .employee-details h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .employee-details p {
+    margin-bottom: 5px;
+  }
+  
+
+  footer {
+  background-color: #333;
+  color: #ccabe7;
+  padding: 10px;
+  text-align: center;
+  margin-top:300px;
+}
+
+  
