@@ -1,0 +1,37 @@
+header {
+    background-color: #dac7ec;
+    padding: 10px;
+  }
+  
+  .logo img {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .logo-title {
+    display: inline;
+    margin-left: 10px;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav ul li {
+    display: inline;
+    margin-right: 10px;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+  }
+  footer {
+    background-color: #333;
+    color: #ccabe7;
+    padding: 10px;
+    text-align: center;
+    margin-top:500px;
+  }
+  

@@ -1,272 +1,154 @@
-// Sample employee data (replace with your own data or fetch from an API)
-const employees = [
-    { name: "John Doe", position: "Manager", department: "Sales" },
-    { name: "Jane Smith", position: "Developer", department: "IT" },
-    { name: "Alex Johnson", position: "Accountant", department: "Finance" },
-    // Add more employee objects as needed
-  ];
+class EmployeeIDGenerator {
+    constructor() {
+      this.usedIDs = new Set();
+    }
   
-  // Function to render employee information on the page
-  function renderEmployeeList() {
-    const employeeList = document.getElementById("employee-list");
-  
-    // Clear any existing content
-    employeeList.innerHTML = "";
-  
-    // Loop through the employees array and create list items for each employee
-    employees.forEach((employee) => {
-      const listItem = document.createElement("li");
-      listItem.textContent = `${employee.name} - ${employee.position} (${employee.department})`;
-      employeeList.appendChild(listItem);
-    });
+    generateUniqueID() {
+      while (true) {
+        const idNumber = Math.floor(Math.random() * (9999 - 1000 + 1)) + 1000;
+        if (!this.usedIDs.has(idNumber)) {
+          this.usedIDs.add(idNumber);
+          return idNumber;
+        }
+      }
+    }
   }
   
-  // Call the renderEmployeeList function to populate the employee list on page load
-  renderEmployeeList();
+  const generator = new EmployeeIDGenerator();
+  const id1 = generator.generateUniqueID();
+  console.log(id1);
+  const id2 = generator.generateUniqueID();
+  console.log(id2);
 
-  
-  // Object literal for each employee
-const employees = [
+  function calculateNetSalary(salary) {
+    const taxPercent = 7.5;
+    const taxAmount = (salary * taxPercent) / 100;
+    const netSalary = salary - taxAmount;
+    return Math.round(netSalary) ;
+  }
+
+  const employees = [
     {
-      id: generateEmployeeID(),
-      fullName: "John Doe",
-      department: "Administration",
-      level: "Junior",
-      imageURL: "https://example.com/john-doe.jpg",
-      salary: 50000,
+      imageURL: "./img/Ghazi.png",
+      ID: generateId(),
+      FullName: 'Ghazi Samer',
+      Department: "Administration",
+      Level: "Senior",
+      Salary: getRandomSalary("Senior"),
     },
     {
-      id: generateEmployeeID(),
-      fullName: "Jane Smith",
-      department: "Marketing",
-      level: "Mid-Senior",
-      imageURL: "https://example.com/jane-smith.jpg",
-      salary: 70000,
+      imageURL: "./img/Lana.png",
+      ID: generateId(),
+      FullName: 'Lana Ali',
+      Department: "Finance",
+      Level: "Senior",
+      Salary: getRandomSalary("Senior"),
     },
     {
-      id: generateEmployeeID(),
-      fullName: "Alex Johnson",
-      department: "Development",
-      level: "Senior",
-      imageURL: "https://example.com/alex-johnson.jpg",
-      salary: 90000,
+      imageURL: "./img/Tamara.png",
+      ID: generateId(),
+      FullName: 'Tamara Ayoub',
+      Department: "Marketing",
+      Level: "Senior",
+      Salary: getRandomSalary("Senior"),
+    },
+    {
+      imageURL: "./img/Safi.png",
+      ID: generateId(),
+      FullName: 'Safi Walid',
+      Department: "Administration",
+      Level: "Mid-Senior",
+      Salary: getRandomSalary("Mid-Senior"),
+    },
+    {
+      imageURL: "./img/Omar.png",
+      ID: generateId(),
+      FullName: 'Omar Zaid',
+      Department: "Development",
+      Level: "Senior",
+      Salary: getRandomSalary("Senior"),
+    },
+    {
+      imageURL: "./img/Rana.png",
+      ID: generateId(),
+      FullName: 'Rana Saleh',
+      Department: "Development",
+      Level: "Junior",
+      Salary: getRandomSalary("Junior"),
+    },
+    {
+      imageURL: "./img/Hadi.png",
+      ID: generateId(),
+      FullName: 'Hadi Ahmad',
+      Department: "Finance",
+      Level: "Mid-Senior",
+      Salary: getRandomSalary("Mid-Senior"),
     },
   ];
-  
-  // Method to generate a unique four-digit employee ID
-  function generateEmployeeID() {
-    const minID = 1000;
-    const maxID = 9999;
-  
-    // Generate a random number between minID and maxID
-    const employeeID = Math.floor(Math.random() * (maxID - minID + 1) + minID);
-  
-    return employeeID;
-  }
-  
-  // Testing the employee data and IDs
-  employees.forEach((employee) => {
-    console.log("Employee ID:", employee.id);
-    console.log("Full Name:", employee.fullName);
-    console.log("Department:", employee.department);
-    console.log("Level:", employee.level);
-    console.log("Image URL:", employee.imageURL);
-    console.log("Salary:", employee.salary);
-    console.log("----------------------");
+  employees.forEach(function (employee) {
+    console.log("Employee ID: " + employee.ID);
+    console.log("imageURL: " + employee.imageURL);
+    console.log("Full Name: " + employee.FullName);
+    console.log("Department: " + employee.Department);
+    console.log("Level: " + employee.Level);
+    console.log("Salary: " + employee.Salary);
   });
-// Object literal for each employee
-const employees = [
-    {
-      id: generateEmployeeID(),
-      fullName: "John Doe",
-      department: "Administration",
-      level: "Junior",
-      imageURL: "https://example.com/john-doe.jpg",
-    },
-    {
-      id: generateEmployeeID(),
-      fullName: "Jane Smith",
-      department: "Marketing",
-      level: "Mid-Senior",
-      imageURL: "https://example.com/jane-smith.jpg",
-    },
-    {
-      id: generateEmployeeID(),
-      fullName: "Alex Johnson",
-      department: "Development",
-      level: "Senior",
-      imageURL: "https://example.com/alex-johnson.jpg",
-    },
-  ];
+  console.table(employees);
+
+
+  // Function to display employee details
   
-  // Salary range table
-  const salaryRanges = {
-    Senior: { min: 1500, max: 2000 },
-    "Mid-Senior": { min: 1000, max: 1500 },
-    Junior: { min: 500, max: 1000 },
-  };
   
-  // Method to calculate the salary and net salary for each employee
-  function calculateSalary() {
-    employees.forEach((employee) => {
-      // Get the salary range for the employee's level
-      const level = employee.level;
-      const minSalary = salaryRanges[level].min;
-      const maxSalary = salaryRanges[level].max;
+  function displayEmployees(employees) {
+    const employeeList = document.getElementById('employee-list');
   
-      // Generate a random salary within the range
-      const randomSalary = Math.floor(Math.random() * (maxSalary - minSalary + 1) + minSalary);
+    employees.forEach(function(employee) {
+      const employeeCard = document.createElement('div');
+      employeeCard.classList.add('employee-card');
   
-      // Calculate the net salary after deducting tax (7.5%)
-      const taxPercent = 7.5;
-      const netSalary = randomSalary - (randomSalary * taxPercent) / 100;
+      const employeeImage = document.createElement('div');
+      employeeImage.classList.add('employee-image');
   
-      // Add the calculated salary and net salary to the employee object
-      employee.salary = randomSalary;
-      employee.netSalary = netSalary;
+      const imageElement = document.createElement('img');
+      imageElement.src = employee.imageURL;imageElement.alt = 'Employee Image'; imageElement.classList.add('imageURL');
+  
+      employeeImage.appendChild(imageElement);
+  
+      const employeeDetails = document.createElement('div');
+      employeeDetails.classList.add('employee-details');
+  
+      const heading = document.createElement('h2');
+      heading.textContent = 'Employee Information';
+  
+      const idParagraph = document.createElement('p');
+      idParagraph.innerHTML = `<label>Employee ID:</label> <span class="ID">${employee.ID}</span>`;
+  
+      const fullNameParagraph = document.createElement('p');
+      fullNameParagraph.innerHTML = `<label>Full Name:</label> <span class="Full Name">${employee.FullName}</span>`;
+  
+      const departmentParagraph = document.createElement('p');
+      departmentParagraph.innerHTML = `<label>Department:</label> <span class="department">${employee.Department}</span>`;
+  
+      const levelParagraph = document.createElement('p');
+      levelParagraph.innerHTML = `<label>Level:</label> <span class="level">${employee.Level}</span>`;
+  
+      const salaryParagraph = document.createElement('p');
+      salaryParagraph.innerHTML = `<label>Salary:</label> <span class="salary">${employee.Salary}</span>`;
+  
+      employeeDetails.appendChild(heading);
+      employeeDetails.appendChild(idParagraph);
+      employeeDetails.appendChild(fullNameParagraph);
+      employeeDetails.appendChild(departmentParagraph);
+      employeeDetails.appendChild(levelParagraph);
+      employeeDetails.appendChild(salaryParagraph);
+  
+      employeeCard.appendChild(employeeImage);
+      employeeCard.appendChild(employeeDetails);
+  
+      employeeList.appendChild(employeeCard);
     });
   }
   
-  // Call the calculateSalary function to calculate salaries for employees
-  calculateSalary();
-  
-  // Testing the employee data, IDs, salaries, and net salaries
-  employees.forEach((employee) => {
-    console.log("Employee ID:", employee.id);
-    console.log("Full Name:", employee.fullName);
-    console.log("Department:", employee.department);
-    console.log("Level:", employee.level);
-    console.log("Image URL:", employee.imageURL);
-    console.log("Salary:", employee.salary);
-    console.log("Net Salary:", employee.netSalary);
-    console.log("----------------------");
-  });
-// Object literal for each employee (with salary included)
-const employees = [
-    {
-      id: generateEmployeeID(),
-      fullName: "John Doe",
-      department: "Administration",
-      level: "Junior",
-      imageURL: "https://example.com/john-doe.jpg",
-      salary: 800,
-    },
-    {
-      id: generateEmployeeID(),
-      fullName: "Jane Smith",
-      department: "Marketing",
-      level: "Mid-Senior",
-      imageURL: "https://example.com/jane-smith.jpg",
-      salary: 1200,
-    },
-    {
-      id: generateEmployeeID(),
-      fullName: "Alex Johnson",
-      department: "Development",
-      level: "Senior",
-      imageURL: "https://example.com/alex-johnson.jpg",
-      salary: 1800,
-    },
-  ];
-  
-  // Method to generate a unique four-digit employee ID
-  function generateEmployeeID() {
-    const minID = 1000;
-    const maxID = 9999;
-  
-    // Generate a random number between minID and maxID
-    const employeeID = Math.floor(Math.random() * (maxID - minID + 1) + minID);
-  
-    return employeeID;
-  }
-  
-  // Function to render employee names and salaries on the home page
-  function renderEmployeeList() {
-    const employeeList = document.getElementById("employee-list");
-  
-    // Clear any existing content
-    employeeList.innerHTML = "";
-  
-    // Loop through the employees array and create HTML elements for each employee
-    employees.forEach((employee) => {
-      const listItem = document.createElement("li");
-      listItem.innerHTML = `<strong>${employee.fullName}</strong> - Salary: $${employee.salary}`;
-      employeeList.appendChild(listItem);
-    });
-  }
-  
-  // Call the renderEmployeeList function to populate the employee list on page load
-  renderEmployeeList();
-// Object literal for each employee
-const employees = [
-    {
-      id: 1000,
-      fullName: "Ghazi Samer",
-      department: "Administration",
-      level: "Senior",
-      imageURL: "https://example.com/ghazi-samer.jpg",
-    },
-    {
-      id: 1001,
-      fullName: "Lana Ali",
-      department: "Finance",
-      level: "Senior",
-      imageURL: "https://example.com/lana-ali.jpg",
-    },
-    {
-      id: 1002,
-      fullName: "Tamara Ayoub",
-      department: "Marketing",
-      level: "Senior",
-      imageURL: "https://example.com/tamara-ayoub.jpg",
-    },
-    {
-      id: 1003,
-      fullName: "Safi Walid",
-      department: "Administration",
-      level: "Mid-Senior",
-      imageURL: "https://example.com/safi-walid.jpg",
-    },
-    {
-      id: 1004,
-      fullName: "Omar Zaid",
-      department: "Development",
-      level: "Senior",
-      imageURL: "https://example.com/omar-zaid.jpg",
-    },
-    {
-      id: 1005,
-      fullName: "Rana Saleh",
-      department: "Development",
-      level: "Junior",
-      imageURL: "https://example.com/rana-saleh.jpg",
-    },
-    {
-      id: 1006,
-      fullName: "Hadi Ahmad",
-      department: "Finance",
-      level: "Mid-Senior",
-      imageURL: "https://example.com/hadi-ahmad.jpg",
-    },
-  ];
-  
-  // Method to generate a unique four-digit employee ID (not required anymore)
-  
-  // Function to render employee names and salaries on the home page
-  function renderEmployeeList() {
-    const employeeList = document.getElementById("employee-list");
-  
-    // Clear any existing content
-    employeeList.innerHTML = "";
-  
-    // Loop through the employees array and create HTML elements for each employee
-    employees.forEach((employee) => {
-      const listItem = document.createElement("li");
-      listItem.innerHTML = `<strong>${employee.fullName}</strong> - Salary: $${employee.salary}`;
-      employeeList.appendChild(listItem);
-    });
-  }
-  
-  // Call the renderEmployeeList function to populate the employee list on page load
-  renderEmployeeList();
+  // Call the function to display employee details
+  displayEmployees(employees);
       
