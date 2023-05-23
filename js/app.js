@@ -91,7 +91,7 @@ function display() {
       document.write("<br>");
       document.write(".   Name : "+employee[i].fullName+"<br>");
       document.write(".   Salary : "+employee[i].salary+"<br>");
-      
+      document.write(".   Department: " + employee[i].department + "<br>");
     }
 }
 display();
