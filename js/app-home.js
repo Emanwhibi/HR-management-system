@@ -59,14 +59,15 @@ function Employee(empName,empDepartment,empLevel,empImage){
 }
 
 
-
-let ghazi = new Employee("Ghazi Samer","Administration","Senior","assets/Ghazi.jpg")
 let lana = new Employee("Lana Ali","Finance","Senior","assets/Lana.jpg")
-let tamara = new Employee("Tamara Ayoub","Marketing","Senior","assets/Tamara.jpg")
-let safi = new Employee("Safi Walid","Administration","Mid-Senior","assets/Safi.jpg")
-let omar = new Employee("Omar Zaid","Development","Senior","assets/Omar.jpg")
-let rana = new Employee("Rana Saleh","Development","Junior","assets/Rana.jpg")
+let ghazi = new Employee("Ghazi Samer","Administration","Senior","assets/Ghazi.jpg")
 let hadi = new Employee("Hadi Ahmad","Finance","Mid-Senior","assets/Hadi.jpg")
+let tamara = new Employee("Tamara Ayoub","Marketing","Senior","assets/Tamara.jpg")
+let rana = new Employee("Rana Saleh","Development","Junior","assets/Rana.jpg")
+let omar = new Employee("Omar Zaid","Development","Senior","assets/Omar.jpg")
+let safi = new Employee("Safi Walid","Administration","Mid-Senior","assets/Safi.jpg")
+
+
 
 //header
 let header=document.createElement("div");
