@@ -59,6 +59,7 @@ function Employee(empName,empDepartment,empLevel,empImage){
 }
 
 
+
 let ghazi = new Employee("Ghazi Samer","Administration","Senior","assets/Ghazi.jpg")
 let lana = new Employee("Lana Ali","Finance","Senior","assets/Lana.jpg")
 let tamara = new Employee("Tamara Ayoub","Marketing","Senior","assets/Tamara.jpg")
