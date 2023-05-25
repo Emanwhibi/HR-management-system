@@ -132,9 +132,6 @@ let facebookImageA=document.createElement("A");
 facebookImageA.setAttribute("href", "https://www.facebook.com/m.abutuaimeh?mibextid=ZbWKwL")
 footer.appendChild(facebookImageA);
 
-let snapchatImageA=document.createElement("A");
-snapchatImageA.setAttribute("href", "https://www.snapchat.com/add/hamota94?share_id=bKzeaIMuYbc&locale=en-US")
-footer.appendChild(snapchatImageA);
 
 let whatsappImageA=document.createElement("A");
 whatsappImageA.setAttribute("href", "https://wa.link/yw2kk6")
@@ -152,11 +149,7 @@ facebookImage.setAttribute("alt","Facebook logo")
 facebookImage.setAttribute("width","25")
 facebookImageA.appendChild(facebookImage);
 
-let snapchatImage=document.createElement("img");
-snapchatImage.setAttribute("src","assets/snapchat.png")
-snapchatImage.setAttribute("alt","snapchat logo")
-snapchatImage.setAttribute("width","25")
-snapchatImageA.appendChild(snapchatImage);
+
 
 let whatsappImage=document.createElement("img");
 whatsappImage.setAttribute("src","assets/whatsapp.png")
@@ -165,33 +158,9 @@ whatsappImage.setAttribute("width","25")
 whatsappImageA.appendChild(whatsappImage);
 
 let footerMainPar=document.createElement("p");
-footerMainPar.textContent="© 2023 HR Managment System.Jo | Designed And Developed By Drago Co.";
-footerMainPar.id="footer-p"
+footerMainPar.textContent="© 2023 HR Managment . all right reserved "
 footer.appendChild(footerMainPar);
 
 
 
 
-
-
-
-
-
-/*
-
-Employee.prototype.renderEmployees=function(){
-    document.write(
-        `<p>Employee ID : ${this.employeeId}<br>Employee Name : ${this.employeeFullName}<br>Employee Department : ${this.employeeDepartment}<br>Employee Level : ${this.employeeLevel}<br>Employee Image : <a href="${this.employeeImage}" >${this.employeeImage}</a><br>Employee Net Salary : ${this.employeeSalary}<br><br> </p>`
-        )  
-}
-
-
-
-for (let index = 0; index < employeesArray.length; index++) {
-    employeesArray[index].generatId();
-    employeesArray[index].generateRandomsalary();
-    employeesArray[index].renderEmployees();
-    
-}
-
-*/
