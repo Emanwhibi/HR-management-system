@@ -58,7 +58,7 @@ function Employee(empName,empDepartment,empLevel,empImage){
     employeesArray.push(this);
 }
 
-let hadi = new Employee("Hadi Ahmad","Finance","Mid-senior","assests/Hadi.jpg")
+let hadi = new Employee("Hadi Ahmad","Finance","Mid-senior","assets/Hadi.jpg")
 let safi = new Employee("Safi Walid","Administration","Mid-Senior","assets/Safi.jpg")
 let rana = new Employee("Rana Saleh","Development","Junior","assets/Rana.jpg")
 let tamara = new Employee("Tamara Ayoub","Marketing","Senior","assets/Tamara.jpg")
