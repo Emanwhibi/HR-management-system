@@ -1,4 +1,4 @@
-header {
+/* header {
     background-color: #dac7ec;
     padding: 10px;
   }
@@ -33,5 +33,60 @@ header {
     padding: 10px;
     text-align: center;
     margin-top:500px;
+  } */
+  
+
+  html,
+  body {
+    margin: 0;
+    padding: 0;
   }
   
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  
+  #header {
+    background-color: #160c0c;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  #header h1 {
+    font-size: 24px;
+    margin: 0;
+  }
+
+
+
+
+
+  /* Footer styles */
+#footer {
+  background-color: #141313;
+  padding: 20px;
+  text-align: center;
+  color: #fff;
+  margin-top: 500px;
+}
+
+#footer p {
+  margin: 0;
+}
+
+.socialIcons {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.socialIcons a {
+  margin-right: 10px;
+}
+
+.socialIcons img {
+  width: 25px;
+}
